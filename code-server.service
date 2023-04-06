@@ -1,0 +1,13 @@
+[Unit]
+Description=VS Code in the browser
+After=network.target
+
+[Service]
+# The user we'll run the code-server command with
+User=pietro
+Type=simple
+# Full path to the code-server binary
+ExecStart=/usr/bin/code-server
+
+[Install]
+WantedBy=multi-user.target
