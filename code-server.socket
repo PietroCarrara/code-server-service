@@ -1,8 +1,13 @@
 [Unit]
 Description=VS Code in the browser
 
+[Install]
+WantedBy=sockets.target
+
 [Socket]
 # Change the port to where you run your vscode instance on
 ListenStream=127.0.0.1:8001
 # If you don't use a reverse proxy, you may want this line instead:
 # ListenStream=0.0.0.0:8001
+
+Accept=no
