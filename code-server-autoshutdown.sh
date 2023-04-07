@@ -8,8 +8,8 @@ HEARTBEAT_FILE="/home/pietro/.local/share/code-server/heartbeat"
 MAX_LIFETIME=600
 
 current=`date +%s`
-lastmod=`stat -c "%Y" $file`
+lastmod=`stat -c "%Y" $HEARTBEAT_FILE`
 
-if [ $(($current-$last_modified)) -gt $MAX_LIFETIME ]; then
+if [ $((current-lastmod)) -ge $MAX_LIFETIME ]; then
   systemctl stop code-server.service
 fi
