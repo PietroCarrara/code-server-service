@@ -1,0 +1,9 @@
+[Unit]
+Description=Check if code-server should be shutdown
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/code-server-autoshutdown.sh
+
+[Install]
+WantedBy=multi-user.target
